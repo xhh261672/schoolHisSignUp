@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>
+校史系统设计竞赛报名
+</title>
+
+<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js"></script>
+<script type="text/javascript" src="./js/action.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+
+<style type="text/css">
+body {
+	text-align: center;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+}
+a {star:expression(this.onFocus=this.blur());}/*这是啥东西*/
+h1{
+	color: #201d19;
+	font-family: "华文中宋";
+	margin-top: -20px;
+	margin-bottom: 40px;
+}
+h2{
+	position: relative;
+	top: 30px;left: 30px;
+	z-index: 1;
+	font-family: "华文中宋";
+	font-size: 20px;
+	width: 100px;
+	text-align:left;
+}
+#ps{
+	color: #201d19;
+	font-family: "华文中宋";
+	font-size: 20px;
+	line-height: 40px;
+}
+/*.form_register{text-align:center;}
+#button{text-align:left;}
+#login{text-align:left;decoration:none;border:0px;}*/
+.form{margin-left:5%;}
+.input {
+	position: relative;
+	top: -10px;
+	left: -20px;
+	height:40px; 
+	line-height:25px;
+	width:340px;
+	border:3px dashed #d7d7d7;
+	outline: none;
+	border-radius: 3px;
+	vertical-align:middle;
+	padding-left: 110px;
+	margin-bottom: -30px;
+}
+/*#alert_danger{display:none;}*/
+#max{background: url(bg1.jpg);}/*不明白为什么前面设置了body的属性这里又弄一个的目的*/
+#wrapper{
+	position: relative;
+	top: -65px;
+	width: 450px;
+	height: 592px;
+	background: #fff;
+	margin: auto;
+	margin-bottom: 30px;
+	padding-top: 60px;
+	-moz-box-shadow: 0 0 60px #9c9c9c;
+	-webkit-box-shadow: 0 0 60px #9c9c9c;
+	box-shadow: 0 0 60px #9c9c9c;
+	border-top: 4px solid #201d19;
+	margin-top: 8%;
+}
+#bottom-block{
+	position: relative;
+	top: -20px;
+	background-color: #f8f8f8;
+	width: 450px;
+	height: 130px;
+}
+/*#alert_danger
+{
+	position: absolute;
+	top:5px;
+	left: 30px;
+	width: 1300px;
+}*/
+.btn-myself
+{
+	position: relative;
+	top: 40px;left: -20px;
+	width: 34%;
+	margin-left: 10%;
+}
+.star{
+	position: relative;
+	left: 87%;top: -18px;
+	width: 55px;height: 40px;
+	font-family: "华文中宋";
+	font-size: 40px;font-weight: bold;
+	text-align: left;
+	line-height: 0.5em;
+	margin-bottom: -40px;
+}
+.awear{
+	font-size: 12px;
+}
+</style>
+</head>
+
+<body  id="max">
+<div class="wrapper" id="wrapper">
+	<!-- <div id="alert_danger" class="alert alert-danger">账号输入错误</div> -->
+	<h1 align=center>校史系统设计竞赛报名<br><scan id="ps">注意：只填写组长信息</scan></h1>
+	<hr>
+	<div class=form_register>
+		<form  id="register" action="../controller/register.php" method=post onsubmit="return check()">
+			<div class=form>
+				<h2>组长学号:</h2>
+				<input type=text class=input size="18" id="studentID" name="studentID" onfocus="ifocus(this.id);" onchange="ichange_1();"/><p class=star id="input-1">*</p>
+				<h2>组长手机:</h2>
+				<input type=text class=input size="18" id="phone" name="phone" onfocus="ifocus(this.id);" onchange="ichange_2();"/><p class=star id="input-2">*</p>
+				<h2>报名密码:</h2>
+				<input type=password class=input size="18" id="pwd1" name="pwd1" onfocus="ifocus(this.id);" onchange="ichange_3();"/><p class=star id="input-3">*</p>
+				<h2>重复密码:</h2>
+				<input type=password class=input size="18" id="pwd2" name="pwd2" onfocus="ifocus(this.id);" onchange="ichange_4();"/><p class=star id="input-4">*</p>
+			</div>
+		<script type="text/javascript">
+			function ifocus(id){
+				$(".input").css('border','3px dashed #d7d7d7');
+				document.getElementById(id).style.border = "3px dashed #55514b";
+			}
+			function ichange_1(){
+				var obj = document.getElementById('studentID');
+				if(obj.value == ""){
+					document.getElementById('input-1').style.color = "red";
+					document.getElementById('input-1').innerHTML="*<br><scan class=awear>不能为空</scan>";
+				}
+				else if(obj.value<71113000||obj.value>71113500){
+					document.getElementById('input-1').style.color = "red";
+					document.getElementById('input-1').innerHTML="*<br><scan class=awear>学号有误</scan>";
+				}
+				else{
+					document.getElementById('input-1').style.color = "green";
+					document.getElementById('input-1').innerHTML="*";
+				}
+			}
+			function ichange_2(){
+				var obj = document.getElementById('phone');
+				if(obj.value == ""){
+					document.getElementById('input-2').style.color = "red";
+					document.getElementById('input-2').innerHTML="*<br><scan class=awear>不能为空</scan>";
+				}
+				else{
+					document.getElementById('input-2').style.color = "green";
+					document.getElementById('input-2').innerHTML="*";
+				}
+			}
+			function ichange_3(){
+				var obj = document.getElementById('pwd1');
+				if(obj.value == ""){
+					document.getElementById('input-3').style.color = "red";
+					document.getElementById('input-3').innerHTML="*<br><scan class=awear>不能为空</scan>";
+				}
+				else {
+					document.getElementById('input-3').style.color = "green";
+					document.getElementById('input-3').innerHTML="*";
+				}
+			}
+			function ichange_4(){
+				var obj = document.getElementById('pwd2');
+				var _obj = document.getElementById('pwd1');
+				if(obj.value == ""){
+					document.getElementById('input-4').style.color = "red";
+					document.getElementById('input-4').innerHTML="*<br><scan class=awear>不能为空</scan>";
+				}
+				else if(_obj.value!=obj.value){
+					document.getElementById('input-3').style.color = "red";
+					document.getElementById('input-4').style.color = "red";
+					document.getElementById('input-4').innerHTML="*<br><scan class=awear>密码不一致</scan>";
+				}
+				else{
+					document.getElementById('input-3').style.color = "green";
+					document.getElementById('input-4').style.color = "green";
+					document.getElementById('input-3').innerHTML="*";
+					document.getElementById('input-4').innerHTML="*";
+				}
+			}
+		</script>
+		</form>
+		<br/><br/><hr>
+		<div id="bottom-block">
+		<button onclick="handInRegister()" class="btn btn-lg btn-success btn-myself"style="font-family:微软雅黑">报　名</button>
+		<button onclick="changeMode()" class="btn btn-lg btn-success btn-myself"style="font-family:微软雅黑">修改信息-></button>
+	</div>
+</div>
+
+</body>
+</html>

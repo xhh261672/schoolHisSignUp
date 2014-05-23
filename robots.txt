@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /
+Disallow: /controller/
+Disallow: /libs/
+Disallow: /model/
+Disallow: /view/
+Disallow: /record.sql

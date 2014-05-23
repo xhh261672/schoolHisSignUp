@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>
+校史系统设计竞赛报名
+</title>
+<script>
+function hover()
+{
+	obj=document.getElementById("button");
+	obj.src="./loginhover.png";
+}
+function leave()
+{
+	obj=document.getElementById("button");
+	obj.src="./login.png";
+}
+function submit(){
+	document.getElementById("login_info").submit();
+}
+function redirect(){
+	window.location.href = "http://localhost/schoolHis/view/index.html";
+}
+</script>
+
+<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+ -->
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css"/>
+
+<link rel="stylesheet" type="text/css" href="Buttons/css/buttons.css"/>
+<link rel="stylesheet" type="text/css" href="Buttons/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="Buttons/css/font-awesome-ie7.min.css"/>
+<style type="text/css">
+/*body {background:#e8e8e8;text-align: center;}
+.wrapper{
+background:#E8E8E8;
+height:600px;
+display: block;
+font-family: "微软雅黑",Verdana, Arial, Helvetica, sans-serif;
+color: #29A0F9;
+text-align: center;
+font-size: 15px;
+line-height: 100%;
+box-shadow: 0 0 0px #011331;
+border-radius: 5px;
+padding: 10px;
+overflow: hidden;
+margin: 0px auto;
+}*/
+h1{font-family: "微软雅黑"}
+h2{font-family: "微软雅黑";text-align:left}
+.form_register{text-align:center;}
+#button{text-align:left;}
+.form{margin-left:36%;}
+.input {height:40px; line-height:30px;border-right:none; width:180px;;border:1px solid #CCC;vertical-align:middle;}
+#max{background: #E8E8E8}
+.btn-myself
+{
+	width: 15%;
+	margin-left: 3%;
+}
+.form-login
+{
+	margin-left:38%;
+	top:60%;
+
+}
+.btns
+{
+	left:38%;
+}
+
+</style>
+</head>
+<body id="max">
+<div >
+<br/>
+<br/>
+<br/>
+
+<h1 align=center>校史系统设计竞赛报名</h1>
+<br/>
+<br/>
+<div class=form-login>
+<form id="login_info" action="../controller/login.php" method=post>
+
+<h2>组长学号:
+<input type=text class=input size="18" style="width:27%" name="studentID"/><br/></h2>
+<h2>注册密码:
+<input type=password class=input size="18" style="width:27%" name="pwd"/></h2>
+
+
+<br/><br/><br/><br/>
+<div class=btns>
+	
+	<button onclick="redirect()" class="btn btn-lg btn-success btn-myself"style="font-family:微软雅黑"> <-回首页</button>
+	<button onclick="submit()" class="btn btn-lg btn-success btn-myself"style="font-family:微软雅黑">登录</button>
+
+</div>
+</form>
+</div>
+
+</div>
+</body>
+</html>

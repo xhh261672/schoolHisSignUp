@@ -1,0 +1,119 @@
+body {background:#e8e8e8;}
+a {star:expression(this.onFocus=this.blur());}
+
+.header {
+    position: fixed;
+    left: 43%;
+    top: 12%;
+}
+#register_form{
+    display: none;
+}
+#register_form{
+    
+    position: fixed;
+    left:38%;
+    width: 70%;
+    margin-top:7%;
+    /*text-align:center;*/
+}
+
+.main_frame{
+    position: fixed;
+    height: 70%;
+    width: 100%;
+    margin-top: 3%;
+    padding: 28px;
+    /*top: 5%;*/
+}
+.bg_image{
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -ms-filter: blur(3px);    
+        filter: blur(3px); 
+    background: url(../resources/TempBgm.jpg) no-repeat;
+    
+}
+
+.input{
+    outline: none;
+    border-radius: 10px;
+    height:40px;
+    width:240px;
+    line-height:30px;
+    border-right:none;
+    margin: 0.5%;
+    vertical-align:middle;
+}
+#button{
+    text-align:left;
+}
+#login{
+    text-align:left;
+    decoration:none;
+    border:0px;
+}
+#alert_danger{display:none;}
+/*#max{background: #E8E8E8}*/
+#alert_danger{
+    font-family: "Microsoft Yahei";
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid ;
+    position: fixed;
+    top: 29%;
+    left: 63%;
+    width: 16%;
+    border-radius: 10px;
+}
+.login_form{
+    position: fixed;
+    top: 30%;
+    left: 39%;
+    width: 100%;
+    height: 80%;
+}
+.operatebtns{
+    position: fixed;
+    font-family: "Microsoft Yahei";
+    font-weight: bold;
+    text-align: center;
+    /*margin-top:4%;*/
+    margin-top: 40%;
+    width: 10%;
+    height: 7%;
+    font-size: 20px;
+}
+#registerbtn{
+    /*position: fixed;*/
+    left:38%;
+    /*margin-right: 5%;*/
+}
+#loginbtn{
+    left:38%;
+    margin-left: 15%;
+}
+.choice{
+    position: fixed;
+    font-size: 20px;
+    width: 44%;
+    left:38%;
+    top:85%;
+    font-family: "Microsoft Yahei";
+}
+#login_choice{
+    margin-left: 5%;
+}
+#register_choice{
+    margin-right: 5%;
+}
+#welcome_label{
+    position: fixed;
+    top: 20%;
+    left: 0%;
+    /*right: 2%;*/
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
