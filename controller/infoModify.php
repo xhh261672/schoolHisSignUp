@@ -53,7 +53,14 @@ else{
 		$modifySession = $_POST["studentID"]."modify";
 		if(!isset($_SESSION[$modifySession])){
 			$controller=new DB();
-			$controller->updategroup($studentID,$name,$studentID1,$name1,$studentID2,$name2,$studentID3,$name3);
+			$exist_row = $controller->select_sentence("group_info","leaderID",$studentID);
+			if($exist_row == 0){
+				$controller->savegroup($studentID,$name,$studentID1,$name1,$studentID2,$name2,$studentID3,$name3);
+			}
+			else{
+
+				$controller->updategroup($studentID,$name,$studentID1,$name1,$studentID2,$name2,$studentID3,$name3);
+			}
 			
 			$smarty->assign('info',"修改成功");
 			$_SESSION[$modifySession] = time();
@@ -70,8 +77,14 @@ else{
 		else{
 
 			$controller=new DB();
-			$controller->updategroup($studentID,$name,$studentID1,$name1,$studentID2,$name2,$studentID3,$name3);
-			
+			$exist_row = $controller->select_sentence("group_info","leaderID",$studentID);
+			if($exist_row == 0){
+				$controller->savegroup($studentID,$name,$studentID1,$name1,$studentID2,$name2,$studentID3,$name3);
+			}
+			else{
+				
+				$controller->updategroup($studentID,$name,$studentID1,$name1,$studentID2,$name2,$studentID3,$name3);
+			}
 			$smarty->assign('info',"修改成功");
 			$_SESSION[$modifySession] = time();
 			$smarty->display('info.tpl');
